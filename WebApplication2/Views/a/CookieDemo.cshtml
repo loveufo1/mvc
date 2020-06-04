@@ -1,0 +1,23 @@
+﻿
+@{
+    ViewBag.Title = "CookieDemo";
+}
+
+<h2>CookieDemo</h2>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    @:請輸入資料
+<div class="form-group">
+    <div class="col-md-offset-2 col-md-10">
+        <input type="text" name="txtCookie" value="" class="form-control" />
+    </div>
+    <div class="col-md-offset-2 col-md-10">
+        <input type="submit" value="ok" class="btn btn-default" />
+    </div>
+    <div class="col-md-offset-2 col-md-10">
+        <span>cookie: @ViewBag.cookie</span>
+    </div>
+</div>
+}

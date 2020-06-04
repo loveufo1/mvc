@@ -1,0 +1,25 @@
+﻿
+@{
+    ViewBag.Title = "showCustomerbyId";
+    string p = "3.jpg";
+    if (!string.IsNullOrEmpty(ViewBag.vid))
+    {
+        p = ViewBag.vid + ".jpg";
+    }
+}
+@{ 
+    <img src="~/Content/@p" />
+}
+<h2 style="color:palevioletred">安安</h2>
+Name:@ViewBag.vname
+<br />
+Phone:@ViewBag.vphone
+<br />
+Email:@ViewBag.vemail
+<br />
+Address:@ViewBag.vaddress
+<br />
+
+
+
+

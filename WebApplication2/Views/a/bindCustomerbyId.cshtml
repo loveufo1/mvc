@@ -1,0 +1,31 @@
+﻿@model WebApplication2.Models.customer
+@{
+    ViewBag.Title = "bindCustomerbyId";
+    string p = "3.jpg";
+    if (Model != null)
+    {
+        p = Model.id.ToString() + ".jpg";
+    }
+}
+
+<h2>bindCustomerbyId</h2>
+@{
+    <img src="~/Content/@p" />
+}
+@{
+    if (Model != null)
+    {
+     @Model.name
+     @Model.phone
+    
+    
+     }
+}
+
+<br />
+
+<br />
+
+<br />
+
+<br />

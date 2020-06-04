@@ -1,0 +1,63 @@
+﻿@model IEnumerable<WebApplication2.tShoppingCar>
+
+@{
+    ViewBag.Title = "car";
+}
+
+<h2>car</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.fId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fCustomer)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fProduct)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fCount)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fPrice)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.fId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fCustomer)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fProduct)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fCount)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fPrice)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>

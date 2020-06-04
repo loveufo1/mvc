@@ -1,0 +1,25 @@
+﻿
+@{
+    ViewBag.Title = "login";
+}
+
+<h2>login</h2>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+<div class="form-group">
+    email:
+    <div class="col-md-offset-2 col-md-10">
+        <input type="text" name="txtAcount" value="" class="form-control" />
+    </div>
+    password:
+    <div class="col-md-offset-2 col-md-10">
+        <input type="text" name="txtPassword" value="" class="form-control" />
+    </div>
+   
+    <div class="col-md-offset-2 col-md-10">
+        <input type="submit"  value="oj" class="btn btn-default" />
+    </div>
+</div>
+}

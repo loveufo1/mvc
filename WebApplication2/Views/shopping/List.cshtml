@@ -1,0 +1,61 @@
+﻿@model IEnumerable<WebApplication2.tProject>
+
+@{
+    ViewBag.Title = "List";
+    int count = 0;
+
+}
+
+<h2>有奸商成</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            序號
+        </th>
+        <th>
+            名稱
+        </th>
+
+        <th>
+            現有量
+        </th>
+        <th>
+            骨折價
+        </th>
+        <th>買</th>
+        <th>買</th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        count++;
+        <tr>
+            <td>
+                @count
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.fname)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.fcost)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.fprice)
+            </td>
+            <td>
+                @Html.ActionLink("買買買", "add", new { id = item.fid })
+                
+            </td>
+            <td>
+                @Html.ActionLink("session", "addsession", new { id = item.fid })
+            </td>
+        </tr>
+    }
+
+</table>
+@Html.ActionLink("購物車", "car")
+@Html.ActionLink("session購物車", "sessioncar")

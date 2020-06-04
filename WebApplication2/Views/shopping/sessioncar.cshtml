@@ -1,0 +1,68 @@
+﻿@model IEnumerable<WebApplication2.Models.CShoppingCartItem>
+
+@{
+    ViewBag.Title = "sessioncar";
+    int count = 0;
+    double payment = 0;
+    string payintax = "";
+    string tax = "";
+    string pay = "";
+    double payment1 = 0;
+}
+
+<h2>sessioncar</h2>
+
+<p>
+    @Html.ActionLink("繼續","List")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            序
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.productname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.count)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.price)
+        </th>
+        <th>
+            sum
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    count++;
+    payment += item.count * item.price;
+    payment1 = item.count * item.price;
+    <tr>
+        <td>
+            @count
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.productname)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.count)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.price)
+        </td>
+        <td>
+            @payment1
+        </td>
+    </tr>
+    payintax = payment.ToString("###,###,##0");
+    tax=(payment*0.05).ToString("###,###,##0");
+    pay = (payment * 1.05).ToString("###,###,##0");
+}
+
+</table>
+<p>
+    <li>交易金額: @payment</li>
+    <li>稅:@tax</li>
+    <li>共:@pay</li>
+</p>
